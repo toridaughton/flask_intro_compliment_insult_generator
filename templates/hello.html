@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+    <head>
+       <title>Hi There!</title>
+    </head>
+    <body>
+        <h1>Hi There!</h1>
+        <form action="/greet" method="post">
+            <h3>Would you like a compliment?</h2><br>
+          First, what's your name? <input type="text" name="person">
+          <select name="compliment" method="GET" action="/hello" id="compliment">
+            {% for compliment in range(0, awesome_len) %}
+              <option value= "{{ awesomeness[compliment] }}"> {{ awesomeness[compliment] }} </option>
+            {% endfor %}
+          </select>
+          <input type="submit" value="Submit">
+        </form>
+        <h3>OOORRRR...</h3>
+        <form action="/diss" method="post">
+           <h3>Would you like an insult?</h2><br>
+          First, what's your name? <input type="text" name="person">
+          <select name="insult" method="GET" action="/hello" id="insult">
+            {% for i in range(0, insult_len) %}
+              <option value= "{{ insult[i] }}"> {{ insult[i] }} </option>
+            {% endfor %}
+          </select>
+          <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>
